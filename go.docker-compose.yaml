@@ -4,4 +4,4 @@ services:
     app:
         build: .
         environment:
-            - name=via
+            - NAME=${NAME}

@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+    frontend:
+        image: joonathan/alpine-ping
+        network:
+            - frontend
+    backend:
+        image: joonathan/alpine-ping
+        networks:
+            - frontend
+            - database
+networks:
+    frontend:
+        name: frontend_network
+        driver: bridge
+    database:
+        name: database_network
+        driver: bridge
